@@ -24,7 +24,7 @@ from entite import*
 # Définir les ennemis disponibles
 enemies = [
     Nain("Nain esquiveur", 50, 10, 5, 50,["Attaque", "Esquive"], "Nain"),
-    Geant("Géant exécuteur", 120, 15, 10,40, 80, ["Attaque", "Exécution"], "Géant"),
+    Geant("Géant exécuteur", 100, 15, 10,80, 80, ["Attaque", "Exécution"], "Géant"),
     Vampire("Vampire menaçant", 75, 12, 7, 75, ["Attaque", "Vampirisme"], "Vampire")
 ]
 
@@ -79,6 +79,9 @@ while player.hp > 0 and ennemi_aventure.hp > 0:
 
     # Exécuter l'action de l'ennemi
     #ennemi_aventure.choisir_action(player)
+    if ennemi_aventure.classe == "Géant":
+        ennemi_aventure.execute(player)
+        
     ennemi_aventure.infliger_degat(player)
     # Mettre à jour le statut d'exécution du joueur (si applicable)
     #ennemi_aventure.update_execute_status(ennemi_aventure)

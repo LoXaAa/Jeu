@@ -29,7 +29,6 @@ enemies = [
 ]
 
 # Choisir un ennemi aléatoirement
-#ennemi_aventure = random.choice(enemies)
 ennemi_aventure = enemies[random.randint(1,3)-1]
 # Demander à l'utilisateur quelle classe il veut utiliser
 print("Choisissez votre classe:")

@@ -15,6 +15,7 @@ class Ennemi(Entite):
         self.valeur_xp=valeur_xp
         self.action=action
 
+#faire séléctionner une action au sein de la liste fournie
     def choisir_action(self,player):
         x= self.action[randint(1,len(self.action)-1)]
         if x=="Attaque":

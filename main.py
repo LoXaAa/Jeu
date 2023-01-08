@@ -50,7 +50,7 @@ elif class_choix == "2":
     player = Chevalier(nom_joueur, 100, 15, 10,3, "Chevalier")
 elif class_choix == "3":
     player = Ranger(nom_joueur, 100, 15, 10, "Ranger")
-    
+
 print(f"{player.nom} le {player.classe} s'avance")
 sleep(2)
 clear()

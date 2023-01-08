@@ -96,9 +96,10 @@ while player.hp > 0 and ennemi_aventure.hp > 0:
      # Mettre à jour le statut de poison du joueur (si applicable)
     player.update_poison_status()
 
-    # Exécuter l'action de l'ennemi
-    #ennemi_aventure.choisir_action(player)
+    # Exécuter l'action de l'ennemi (on dissocie chaque ennemi)
+
     if ennemi_aventure.classe == "Géant":
+         # Mettre à jour le statut d'exécution du joueur (si applicable)
         ennemi_aventure.execute(player)
 
 
@@ -107,8 +108,6 @@ while player.hp > 0 and ennemi_aventure.hp > 0:
 
     else:
         ennemi_aventure.choisir_action(player)
-    # Mettre à jour le statut d'exécution du joueur (si applicable)
-    #ennemi_aventure.update_execute_status(ennemi_aventure)
 
 # Afficher le vainqueur
 if player.hp > 0:

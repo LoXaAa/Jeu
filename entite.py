@@ -24,6 +24,7 @@ class Entite:
             poison_dmg = 5
             self.hp -= poison_dmg
             self.poison_dura -= 1
+            print(f"il reste {self.poison_dura} tours de poison")
             if self.poison_dura == 0:
                 self.poisoned = False
 

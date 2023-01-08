@@ -1,5 +1,6 @@
 from random import randint
 from Bot import Ennemi
+from time import sleep
 class Geant(Ennemi):
     def __init__(self, nom, hp, force,defense,seuil_execute, valeur_xp,actions,classe):
         super().__init__(nom, hp,force, defense, valeur_xp,actions,classe)
@@ -16,6 +17,7 @@ class Geant(Ennemi):
             dmg=(self.force-player.defense)*2
             player.recevoir_degat(dmg)
             print(f"{player.nom} est en proie au Géant et subi plus de dégat")
+            sleep(2)
         else:
             self.infliger_degat(player)
 

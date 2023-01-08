@@ -1,4 +1,5 @@
 from Bot import Ennemi
+from time import sleep
 import random
 class Nain(Ennemi):
     def __init__(self, nom, hp, force, defense, valeur_xp, actions,classe):
@@ -13,10 +14,12 @@ class Nain(Ennemi):
         else:
             # Si l'attaque est déviée, ne pas appliquer de dégâts
             print(f"{self.nom} a dévié l'attaque!")
+            sleep(2)
+
 
 
     def infliger_degat(self, cible):
-        return (super().infliger_degat(cible),super().update_poison_status())
+        return super().infliger_degat(cible)
     
     def choisir_action(self, player):
         return super().choisir_action(player)

@@ -6,10 +6,10 @@ def clear():
     if platform.system()== "Windows":
         system('cls')
     else:
-        system('clear') 
-from entite import*
+        system('clear')
+from entite import Entite
 from Classes_mechants.Geant import Geant
-        
+
 
 """class Protagonistes:
     def __init__ (self,classe,nom=str,force=int,pv=int):

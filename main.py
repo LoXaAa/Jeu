@@ -37,8 +37,12 @@ print("1. Mage (possède des potions)")
 print("2. Chevalier (possède un bouclier qui bloque les dégâts de la prochaine attaque)")
 print("3. Ranger (possède un poison qui inflige des dégâts chaque tour)")
 class_choix = input()
+sleep(2)
+clear()
 print("comment t'appelles-tu jeune aventurier ?")
 nom_joueur=input()
+sleep(2)
+clear()
 # Créer le joueur en fonction de la classe choisie
 if class_choix == "1":
     player = Sorcier(nom_joueur, 100, 15, 10,3, "Sorcier")
@@ -46,8 +50,13 @@ elif class_choix == "2":
     player = Chevalier(nom_joueur, 100, 15, 10,3, "Chevalier")
 elif class_choix == "3":
     player = Ranger(nom_joueur, 100, 15, 10, "Ranger")
+    
+print(f"{player.nom} le {player.classe} s'avance")
+sleep(2)
+clear()
 
 # Démarrer la boucle de jeu
+clear()
 while player.hp > 0 and ennemi_aventure.hp > 0:
     # Afficher l'état du joueur et de l'ennemi
     print(f"{player.nom} ({player.hp} PV) vs. {ennemi_aventure.nom} ({ennemi_aventure.hp} PV)")
@@ -92,9 +101,11 @@ while player.hp > 0 and ennemi_aventure.hp > 0:
     #ennemi_aventure.choisir_action(player)
     if ennemi_aventure.classe == "Géant":
         ennemi_aventure.execute(player)
-        
+
+
     if ennemi_aventure.classe != "Vampire" :
         ennemi_aventure.infliger_degat(player)
+
     else:
         ennemi_aventure.choisir_action(player)
     # Mettre à jour le statut d'exécution du joueur (si applicable)
